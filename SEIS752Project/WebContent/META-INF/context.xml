@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is bootstrap at Tomcat's startup because Tomcat's default ClassLoader does not support class transformation but allows custom  -->
+<!-- This uses spring-tomcat-weaver, with the appropriate strategy in the spring config file -->
+
+<Context>
+   <Loader loaderClass="org.springframework.instrument.classloading.tomcat.TomcatInstrumentableClassLoader"/>
+</Context>
