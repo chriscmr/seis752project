@@ -3,15 +3,15 @@ article, aside, audio, canvas, command, datalist, details, embed, figcaption, fi
 mark, rp, rt, ruby, summary, time {display:inline}
 /* Global properties */
 html {width:100%}
-body {font-family:Arial, Helvetica, sans-serif;font-size:100%;color:#9d9d9d;min-width:984px;background:url(../images/body.jpg) center 0 repeat}
+body {font-family:Arial, Helvetica, sans-serif;font-size:100%;color:#9d9d9d;min-width:984px;background-color:#f1f1f1}
 .ic, .ic a {border:0;float:right;background:#fff;color:#f00;width:50%;line-height:10px;font-size:10px;margin:-220% 0 0 0;overflow:hidden;padding:0}
 a {color:#00a9ff;outline:none}
 a:hover {text-decoration:none}
 .col-1, .col-2, .col-3, .col-4  {float:left}
 .wrapper {width:100%;overflow:hidden}
 .extra-wrap {overflow:hidden}
-.bg {width:100%;background:url(../images/bg.jpg) center 0 no-repeat}
-.main {width:984px;padding:0;margin:0 auto;font-size:0.875em;line-height:1.285em}
+/* .bg {width:100%;background:url(../images/bg.jpg) center 0 no-repeat} */
+.main {width:984px;padding:0;margin:0 auto;font-size:0.875em;line-height:1.285em;float:right}
 p {margin-bottom:18px}
 .p0 {margin-bottom:0px}
 .p1 {margin-bottom:6px}
@@ -56,14 +56,18 @@ header {width:100%;margin-bottom:-16px;position:relative;z-index:1}
 .row-1 {width:100%;height:113px;overflow:hidden;padding-top:24px}
 .row-2 {width:100%;min-height:85px;position:relative;z-index:1}
 .row-3 {width:100%;min-height:417px;position:relative;z-index:2}
-h1 {padding:0px 0 0 40px;position:relative;float:left}
-.logo {display:block;width:224px;height:45px;text-indent:-5000px;background:url(../images/logo.png) 0 0 no-repeat;margin:10px 0 8px 0}
+h1 {position:relative;float:left}
+.logo {display:block;width:509px;height:45px;text-indent:-5000px;background:url(../images/logo.png) 0 0 no-repeat;margin:10px 0 8px 0}
+
+.uploadbtn {display:block;width:325px;height:72px;text-indent:-5000px;background:url(../images/upload_btn.png) 0 0 no-repeat;margin:30px 0 0px 100px}
+.uploadbtn:hover {display:block;width:325px;height:72px;text-indent:-5000px;background:url(../images/upload_btn_over.png) 0 0 no-repeat;margin:30px 0 0px 100px}
+
 .slog {display:block;font-size:14px;line-height:1.2em;color:#8a8a8a;text-transform:uppercase;letter-spacing:-1px}
 /* search-form */
 #search-form {width:244px;min-height:39px;padding:20px;margin-right:19px;background:#000;border-radius:18px;-moz-border-radius:18px;-webkit-border-radius:18px;float:right}
 
-#search-form-main {width:500px;min-height:39px;padding:20px;margin-right:19px;background:#000;border-radius:18px;-moz-border-radius:18px;-webkit-border-radius:18px;float:right}
-#search-form-main input {font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:1.214em;width:170px;padding:10px 18px 11px;margin:0;color:#9d9d9d;border:none;background:none;float:left}
+#search-form-main {width:500px;min-height:39px;padding:20px;background:#000;border-radius:18px;-moz-border-radius:18px;-webkit-border-radius:18px}
+#search-form-main input {font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:1.214em;width:420px;padding:10px 18px 11px;margin:0;color:#9d9d9d;border:none;background:none;float:left}
 #search-form-main a {display:block;width:38px;height:38px;text-indent:-5000px;background:url(../images/search-button.png) 9px 8px no-repeat #00a9ff;border-radius:0 8px 8px 0;-moz-border-radius:0 8px 8px 0;-webkit-border-radius:0 8px 8px 0;float:right}
 #search-form-main a:hover {background-color:#aaa}
 .search-form-main {background:#fefefe;border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;width:100%;overflow:hidden}
