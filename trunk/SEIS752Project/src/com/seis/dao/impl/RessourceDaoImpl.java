@@ -39,5 +39,14 @@ public class RessourceDaoImpl {
 		return myRessourceList;					
 	}
 	
+	@Transactional(readOnly=true, propagation=Propagation.SUPPORTS)
+	public List<Ressource> getByDescriptionOrTitle (String keyword){
+		Query qRessource = entityManager.createQuery("select R from Ressource R where R.description like :keyword or R.title like like :keyword");
+		qRessource.setParameter("keyword", "%" + keyword.toUpperCase() + "%");		
+		
+		List<Ressource> myRessourceList = (List<Ressource>) qRessource.getResultList();
+		
+		return myRessourceList;					
+	}
 	
 }
