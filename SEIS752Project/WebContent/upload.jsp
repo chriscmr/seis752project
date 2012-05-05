@@ -46,6 +46,7 @@
 		alert("Upload.jsp:performAjaxFileUpload");
   //   var sampleText = document.getElementById("sampleText").value;
 		var sourcFile = document.getElementById("u29").files[0];
+		alert("file " + sourcFile.value);
 		var formdata = new FormData();
 		formdata.append("sampleFile", sourcFile);	        		
 		
