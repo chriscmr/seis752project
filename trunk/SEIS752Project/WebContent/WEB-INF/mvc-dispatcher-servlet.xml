@@ -86,7 +86,7 @@
 		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
 
 	<!-- Location Tiles config -->
-	<!--<bean id="tilesConfigurer"
+	<bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
 		<property name="definitions">
 			<list>
@@ -94,17 +94,14 @@
 			</list>
 		</property>
 	</bean>
-
-	--><!-- this bean with the well known name generates view names for us <bean 
-		id="viewNameTranslator" class="org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator"/> -->
-
+	
 	<!-- Resolves views selected for rendering by Tiles -->
-	<!--<bean id="tilesViewResolver"
+	<bean id="tilesViewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver"
 		p:viewClass="org.springframework.web.servlet.view.tiles2.TilesView"
 		p:order="0" />
 
-	--><!-- Resolves views selected for rendering by @Controllers to .jsp resources 
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

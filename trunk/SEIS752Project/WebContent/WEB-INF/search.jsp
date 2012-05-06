@@ -1,66 +1,24 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<%@page import="java.util.List"%>
-<%@page import="com.seis.dao.impl.RessourceDaoImpl"%>
-<%@page import="com.seis.domain.Ressource"%>
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"  pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Teacher Resources</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
-<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen">
-<link rel="stylesheet" href="css/chosen.css" type="text/css" media="screen">
-
-<script type="text/javascript" src="js/jquery-1.6.min.js"></script>
-<script src="js/cufon-yui.js" type="text/javascript"></script>
-<script src="js/cufon-replace.js" type="text/javascript"></script>
-<script src="js/Open_Sans_400.font.js" type="text/javascript"></script>
-<script src="js/Open_Sans_Light_300.font.js" type="text/javascript"></script> 
-<script src="js/Open_Sans_Semibold_600.font.js" type="text/javascript"></script>  
-<script type="text/javascript" src="js/tms-0.3.js"></script>
-<script type="text/javascript" src="js/tms_presets.js"></script> 
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script> 
-<script src="js/FF-cash.js" type="text/javascript"></script>
-<script src="js/searchValidation.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/chosen.jquery.js"></script>
-<!--[if lt IE 7]>
-	<div style=' clear: both; text-align:center; position: relative;'>
-		<a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg" border="0"  alt="" /></a>
-	</div>
-<![endif]-->
-<!--[if lt IE 9]>
-	<script type="text/javascript" src="js/html5.js"></script>
-	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
-<![endif]-->
 <script>
-	$(function(){
-				
+	$(function(){				
 		$('#search_param1').chosen({allow_single_deselect:true});
 		$('#grade').chosen({allow_single_deselect:true});
 		$('#subject').chosen({allow_single_deselect:true});		
-	});
-	
-	$(function() {
-		$("#uploadbtn").click(function() { 					  						
-			alert('Upload Button');
-			window.location.href = "upload.jsp"; 
-				
-		});				  
-	});
+	});	
 </script>
-
 </head>
 
 <body>	
 	<div class="main">	
 		
-		<div class="row-1">
-			<H1><a class="logo" href="index.jsp">Teacher Resources</a></H1>			
+		<div class="row-1" style="font-size:10px">
+			<a class="logo" href="index.jsp"></a> 
+			
+			<c:if test="${sessionScope.email != null}">
+				Logged in: <label style="color:#000"><c:out value="${sessionScope.email}"/></label> <a href="logout.do">(Log out)</a>
+			</c:if>							
 		</div>
 		
 		<div class="row-1">								
@@ -102,21 +60,10 @@
 					
 		<div  class="row-1">								
 		 	<form id="upload-form" action="" method="post" enctype="multipart/form-data">
-		 		<H1><a href="#" id="uploadbtn" class="uploadbtn"></a></H1>					
+		 		<H1>
+		 		<a href="<c:choose><c:when test="${sessionScope.email != null}">upload.jsp</c:when><c:otherwise>login.jsp</c:otherwise></c:choose>" id="uploadbtn" class="uploadbtn"></a></H1>					
 			</form>						
 		</div>					         				
 					
 	</div>  		  
-	
-	<c:forEach items = "${resourceList}" var="myResource">               			       			
-		<c:out value="${myResource.id}"/>
-		<c:out value="${myResource.description}"/><br>				       		       
-   </c:forEach>
-   	   
-	
-	<div style="width:100%;overflow:hidden;padding-top:170px;text-align:center">
-	 	&copy;&nbsp;2012&nbsp;&#45;&nbsp;University&nbsp;of&nbsp;St.&nbsp;Thomas&nbsp;-&nbsp;SEIS&nbsp;752&nbsp;Team&nbsp;I
-	</div>	
-</body>
-</html>
-
+	   	

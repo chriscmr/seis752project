@@ -182,5 +182,19 @@ public class LoginController {
 		}
 		return consumerManager;
 	}
-
+	
+	
+	//Logout 
+	
+	@RequestMapping(value="logout.do", method = RequestMethod.GET)
+	   public String logOutForm(HttpServletRequest request) {			
+			logger.debug("logOut invoked");
+			
+		HttpSession session1 = request.getSession(false);             		
+  		if (session1 != null) {     			  			         	
+  			session1.invalidate(); 
+  		}
+  		//return "redirect:loginForm.htm?rep=logout";
+  		return "search";
+    }
 }
