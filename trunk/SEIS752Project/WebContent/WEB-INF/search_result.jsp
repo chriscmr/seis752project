@@ -50,7 +50,7 @@
 <body>	
 	<div class="main">	
 		
-		<div class="row-1" style="font-size:10px">
+		<div class="row-1" style="font-size:12px">
 			<a class="logo" href="index.jsp"></a> 
 			
 			<c:if test="${sessionScope.email != null}">
