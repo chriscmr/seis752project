@@ -1,4 +1,8 @@
 SQL
+Usefull commands
+select sequence_name from user_sequences;
+select table_name from user_tables;
+
 -- Create database user seis752 account with password: seis752
 -- to remote user use command below without --
 -- drop user seis752 cascade;
