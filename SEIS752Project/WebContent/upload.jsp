@@ -151,12 +151,15 @@
 </script>
 </head>
 <body>
-Contributor's Email Address
-<c:out value="${sessionScope.email}"/>
+
 	<div class="main">	
 		
-		<div class="row-1">
-			<H1><a class="logo" href="index.jsp">Teacher Resources</a></H1>			
+		<div class="row-1" style="font-size:12px">
+			<a class="logo" href="index.jsp"></a> 
+			
+			<c:if test="${sessionScope.email != null}">
+				Logged in as: <label style="color:#000"><c:out value="${sessionScope.email}"/></label> <a href="logout.do">(Log out)</a>
+			</c:if>							
 		</div>
 		
 <INPUT id=u18  type=text value="mmkhtitle" style="position:absolute; left:342px; top:265px; width:308px; height:25px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none"   >
