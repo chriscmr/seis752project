@@ -43,10 +43,13 @@
   function performAjaxFileUpload() {
 		alert("Upload.jsp:performAjaxFileUpload");
   //   var sampleText = document.getElementById("sampleText").value;
-		var sourcFile = document.getElementById("u29").files[0];
-		alert("file " + sourcFile.value);
+		var iconFile = document.getElementById("u29").files[0];
+		alert("file " + iconFile.value);
 		var formdata = new FormData();
-		formdata.append("sampleFile", sourcFile);	        		
+		formdata.append("iconFile", iconFile);
+		var contentFile = document.getElementById("u39").files[0];
+		alert("file " + contentFile.value);
+		formdata.append("contentFile", contentFile);
 		
 		var xmlHttpRequest = getXMLHttpRequest(); 
 		xmlHttpRequest.onreadystatechange = getReadyStateHandler(xmlHttpRequest);  
@@ -65,9 +68,12 @@
  function performAjaxSubmit() {
  		alert("Upload.jsp:performAjaxSubmit");
     //   var sampleText = document.getElementById("sampleText").value;
- 		var sourcFile = document.getElementById("u29").files[0];
- 		var formdata = new FormData();
- 		formdata.append("sampleFile", sourcFile);	        		
+
+		var iconFile = document.getElementById("u29").files[0];
+		var formdata = new FormData();
+		formdata.append("iconFile", iconFile);
+		var contentFile = document.getElementById("u39").files[0];
+		formdata.append("contentFile", contentFile);
  		
  		var xmlHttpRequest = getXMLHttpRequest(); 
  		xmlHttpRequest.onreadystatechange = getReadyStateHandler(xmlHttpRequest);  
@@ -83,11 +89,14 @@
 			   var u26 = document.getElementById("u26");
 			   var u25 = document.getElementById("u25");
 			   var u29 = document.getElementById("u29");
-			   alert("file u29 " + u29.value);
-			   var mike = PopulateVariables(u29.value);
-			   alert(mike);
+			   var u39 = document.getElementById("u39");
+//			   alert("file u29 " + u29.value + "file u39 " + u39.value);
+//			   var mike = PopulateVariables(u29.value);
+//			   alert("call mike1 " + mike);
+//			   mike = PopulateVariables(u39.value);
+//			   alert("call mike2 " + mike);
 
-			   	self.location.href="Upload" +"?title=" + u18.value + "&subject=" + u21.value + "&grade=" + u26.value + "&description=" + u25.value  + "&file=" + u29.value;
+			   	self.location.href="Upload" +"?title=" + u18.value + "&subject=" + u21.value + "&grade=" + u26.value + "&description=" + u25.value  + "&file=" + u29.value  + "&icon=" + u39.value;
 
  			}
   		};	        		
@@ -159,24 +168,24 @@ Contributor's Email Address
 
 <!--  mike start -->
 <SELECT id=u21  style="position:absolute; left:342px; top:310px; width:180px; height:22px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
-<OPTION  value="behavioral Studies">behavioral Studies</OPTION>
-<OPTION  value="Career Education">Career Education</OPTION>
-<OPTION  value="Civics">Civics</OPTION>
-<OPTION  value="Economics">Economics</OPTION>
-<OPTION  value="English">English</OPTION>
-<OPTION  value="Foreign Language">Foreign Language</OPTION>
-<OPTION  value="Geography">Geography</OPTION>
-<OPTION  value="Health">Health</OPTION>
-<OPTION  value="Historical Understanding">Historical Understanding</OPTION>
-<OPTION  value="K-4 History and State History">K-4 History and State History</OPTION>
-<OPTION  value="Math">Math</OPTION>
-<OPTION  value="Physical Education">Physical Education</OPTION>
-<OPTION  value="Science">Science</OPTION>
-<OPTION  value="Social Studies">Social Studies</OPTION>
-<OPTION  value="Technology">Technology</OPTION>
-<OPTION  value="The Arts">The Arts</OPTION>
-<OPTION  value="U.S History">U.S History</OPTION>
-<OPTION  value="World History">World History</OPTION>
+<OPTION  value="1">Behavioral Studies</OPTION>
+<OPTION  value="2">Career Education</OPTION>
+<OPTION  value="3">Civics</OPTION>
+<OPTION  value="4">Economics</OPTION>
+<OPTION  value="5">English</OPTION>
+<OPTION  value="6">Foreign Language</OPTION>
+<OPTION  value="7">Geography</OPTION>
+<OPTION  value="8">Health</OPTION>
+<OPTION  value="9">Historical Understanding</OPTION>
+<OPTION  value="10">K-4 History and State History</OPTION>
+<OPTION  value="11">Math</OPTION>
+<OPTION  value="12">Physical Education</OPTION>
+<OPTION  value="13">Science</OPTION>
+<OPTION  value="14">Social Studies</OPTION>
+<OPTION  value="15">Technology</OPTION>
+<OPTION  value="16">The Arts</OPTION>
+<OPTION  value="17">U.S History</OPTION>
+<OPTION  value="18">World History</OPTION>
 </SELECT>
 
 <DIV id=u22 style="position:absolute; left:201px; top:313px; width:130px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
@@ -188,20 +197,20 @@ Contributor's Email Address
 <TEXTAREA id=u25  style="position:absolute; left:345px; top:430px; width:314px; height:92px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none"  ></TEXTAREA>
 
 <SELECT id=u26  style="position:absolute; left:345px; top:366px; width:180px; height:22px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
-<OPTION  value="Pre-K">Pre-K</OPTION>
-<OPTION  value="K">K</OPTION>
-<OPTION  value="1">1</OPTION>
-<OPTION  value="2">2</OPTION>
-<OPTION  value="3">3</OPTION>
-<OPTION  value="4">4</OPTION>
-<OPTION  value="5">5</OPTION>
-<OPTION  value="6">6</OPTION>
-<OPTION  value="7">7</OPTION>
-<OPTION  value="8">8</OPTION>
-<OPTION  value="9">9</OPTION>
-<OPTION  value="10">10</OPTION>
-<OPTION  value="11">11</OPTION>
-<OPTION  value="12">12</OPTION>
+<OPTION  value="1">Pre-K</OPTION>
+<OPTION  value="2">K</OPTION>
+<OPTION  value="3">1</OPTION>
+<OPTION  value="4">2</OPTION>
+<OPTION  value="5">3</OPTION>
+<OPTION  value="6">4</OPTION>
+<OPTION  value="7">5</OPTION>
+<OPTION  value="8">6</OPTION>
+<OPTION  value="9">7</OPTION>
+<OPTION  value="10">8</OPTION>
+<OPTION  value="11">9</OPTION>
+<OPTION  value="12">10</OPTION>
+<OPTION  value="13">11</OPTION>
+<OPTION  value="14">12</OPTION>
 </SELECT>
 
 <DIV id=u27 style="position:absolute; left:200px; top:554px; width:130px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
@@ -217,13 +226,18 @@ Contributor's Email Address
 <INPUT id=u29  type=file value="Browse" size=60 style="position:absolute; left:342px; top:547px; width:500px; height:25px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
 
 <INPUT id=u30  type="button" value="Add Content" onClick="performAjaxFileUpload();" style="position:absolute; left:842px; top:547px; width:80px; height:25px; ; ; text-align: center ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
+
+<INPUT id=u39  type=file value="Browse" size=60 style="position:absolute; left:342px; top:587px; width:500px; height:25px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
+
+<INPUT id=u40  type="button" value="Add Content" onClick="performAjaxFileUpload();" style="position:absolute; left:842px; top:587px; width:80px; height:25px; ; ; text-align: center ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
+
 </form> 
 
 <script type="text/javascript">
     var rJsonu32 = {};
 </script>
 
-<DIV id=ru31 style="position:absolute; left:470px; top:594px; width:211px; height:41px;; overflow:visible; visibility:hidden">
+<DIV id=ru31 style="position:absolute; left:470px; top:614px; width:211px; height:41px;; overflow:visible; visibility:hidden">
 
 <span style="position:absolute; left:-3px; top:-3px; width:219px; height:49px; ;
 filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='Upload_files/ru31.png',sizingMethod='scale');
@@ -231,7 +245,7 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='Upload_files/ru31
 src="Upload_files/ru31.png" border="0" alt=""></span>
 
 </DIV>
-<DIV id=ou31 style="position:absolute; left:470px; top:594px; width:211px; height:41px;; overflow:visible; ">
+<DIV id=ou31 style="position:absolute; left:470px; top:614px; width:211px; height:41px;; overflow:visible; ">
 
 <span style="position:absolute; left:-3px; top:-3px; width:219px; height:49px; ;
 filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='Upload_files/u31.png',sizingMethod='scale');
@@ -239,7 +253,7 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='Upload_files/u31.
 src="Upload_files/u31.png" border="0" alt=""></span>
 
 </DIV>
-<DIV id=u31container style="position:absolute; left:470px; top:594px; width:211px; height:41px;; overflow:visible;">
+<DIV id=u31container style="position:absolute; left:470px; top:614px; width:211px; height:41px;; overflow:visible;">
 
 <DIV id=u32 style="position:absolute; left:2px; top:9px; width:206px; height:22px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <DIV id=u32_rtf><div style="text-align:center"><span style=" color:#000000; font-size:19px;"><b>Submit</b></span></div></DIV></DIV>
@@ -247,13 +261,13 @@ src="Upload_files/u31.png" border="0" alt=""></span>
 <!-- 
 <INPUT type="image" id=u31 src="Resources/transparent.gif" style="position:absolute; left:470px; top:680px; width:210px; height:40px" onmouseover="ApplyImageAndTextStyles('r', 'u31', 'u32', rJsonu32, false);" onmouseout="ApplyImageAndTextStyles('o', 'u31', 'u32', '', false);"  >
  -->
-<INPUT type="image" id=u31 src="Resources/transparent.gif" style="position:absolute; left:470px; top:594px; width:210px; height:40px" onmouseover="ApplyImageAndTextStyles('r', 'u31', 'u32', rJsonu32, false);" onmouseout="ApplyImageAndTextStyles('o', 'u31', 'u32', '', false);"  onClick="performAjaxSubmit();">
+<INPUT type="image" id=u31 src="Resources/transparent.gif" style="position:absolute; left:470px; top:614px; width:210px; height:40px" onmouseover="ApplyImageAndTextStyles('r', 'u31', 'u32', rJsonu32, false);" onmouseout="ApplyImageAndTextStyles('o', 'u31', 'u32', '', false);"  onClick="performAjaxSubmit();">
 
-<DIV id=u33 style="position:absolute; left:340px; top:594px; width:118px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
+<DIV id=u33 style="position:absolute; left:340px; top:614px; width:118px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <DIV id=u33_rtf><a href="index.jsp"><span style=" color:#3366CC; font-size:13px;"><u>&lt;&lt; Back Home</u></span></a></DIV></DIV><SCRIPT src="Resources/axurerp_pagescript.js"></SCRIPT>
 </div>
 
-	<div style="width:100%;overflow:hidden;padding-top:500px;text-align:center">
+	<div style="width:100%;overflow:hidden;padding-top:600px;text-align:center">
 	 	&copy;&nbsp;2012&nbsp;&#45;&nbsp;University&nbsp;of&nbsp;St.&nbsp;Thomas&nbsp;-&nbsp;SEIS&nbsp;752&nbsp;Team&nbsp;I
 	</div>	
 <!--  mike end -->
