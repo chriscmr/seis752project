@@ -81,6 +81,14 @@
 			  }
 		} );				 
 	});
+	
+	$(function() {
+		$("#uploadbtn-small").click(function() { 					  						
+			alert('Upload Button');
+			window.location.href = "upload.jsp"; 
+				
+		});				  
+	});
 </script>
 	
 </head>
