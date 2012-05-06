@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<!-- DEFAULT MAIN TEMPLATE -->
+  <definition name="mainLayout" template="/WEB-INF/templates/page_layout.jsp">
+      <put-attribute name="title"  value="Template"/>      
+      <put-attribute name="myheader" value="/WEB-INF/templates/header.jsp"/>      
+      <put-attribute name="body"   value="Template"/>
+      <put-attribute name="footer"   value="/WEB-INF/templates/footer.jsp"/>
+  </definition>	  	
+	    
+  <!-- SEARCH -->
+  <definition name="search" extends="mainLayout">      
+      <put-attribute name="title"  value="Search"/>           
+      <put-attribute name="body"   value="/WEB-INF/search.jsp"/>      
+  </definition>
+  
+  <!-- SEARCH RESULT -->
+  <definition name="search_result" extends="mainLayout">      
+      <put-attribute name="title"  value="Search Results"/>           
+      <put-attribute name="body"   value="/WEB-INF/search_result.jsp"/>      
+  </definition>
+  
+  <!-- LOGIN -->
+  <definition name="login" extends="mainLayout">      
+      <put-attribute name="title"  value="login"/>           
+      <put-attribute name="body"   value="/WEB-INF/login.jsp"/>      
+  </definition>       
+  
+  
+</tiles-definitions>
