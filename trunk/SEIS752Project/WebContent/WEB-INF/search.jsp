@@ -44,6 +44,14 @@
 		$('#grade').chosen({allow_single_deselect:true});
 		$('#subject').chosen({allow_single_deselect:true});		
 	});
+	
+	$(function() {
+		$("#uploadbtn").click(function() { 					  						
+			alert('Upload Button');
+			window.location.href = "upload.jsp"; 
+				
+		});				  
+	});
 </script>
 
 </head>
