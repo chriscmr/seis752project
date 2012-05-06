@@ -59,6 +59,7 @@
 		xmlHttpRequest.onload = function(e) {
 			if (this.status == 200) {
 			   alert(this.responseText);
+
 			}
 		};	        		
 }
@@ -79,8 +80,20 @@
  		xmlHttpRequest.onload = function(e) {
  			if (this.status == 200) {
  			   alert(this.responseText);
+			   var u18 = document.getElementById('u18');
+			   var u21 = document.getElementById("u21");
+			   var u26 = document.getElementById("u26");
+			   var u25 = document.getElementById("u25");
+			   var u29 = document.getElementById("u29");
+			   alert("file u29 " + u29.value);
+			   var mike = PopulateVariables(u29.value);
+			   alert(mike);
+
+			   	self.location.href="Upload" +"?title=" + u18.value + "&subject=" + u21.value + "&grade=" + u26.value + "&description=" + u25.value  + "&file=" + u29.value;
+
  			}
   		};	        		
+ 
  }
  /*  
   * Returns a function that waits for the state change in XMLHttpRequest  
@@ -248,6 +261,6 @@ src="Upload_files/u31.png" border="0" alt=""></span>
 <!--  mike end -->
 
 		
-	
+<SCRIPT src="Upload_files/axurerp_pagespecificscript.js"></SCRIPT>	
 </body>
 </html>
