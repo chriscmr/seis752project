@@ -149,21 +149,21 @@ public class Upload extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String xml = DBtoXML.dbSelectToXML(conn, "Ressource", id);
-		System.out.println(xml);
-		try {
-			String html = StringToHTML.strToHtml(xml);
-			System.out.println(html);
-			request.getSession().setAttribute ("tbtable",html);
-//			request.getRequestDispatcher("index.jsp").forward(request, response);
-
-		} catch (TransformerConfigurationException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (TransformerException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+//		String xml = DBtoXML.dbSelectToXML(conn, "Ressource", id);
+//		System.out.println(xml);
+//		try {
+//			String html = StringToHTML.strToHtml(xml);
+//			System.out.println(html);
+//			request.getSession().setAttribute ("tbtable",html);
+////			request.getRequestDispatcher("index.jsp").forward(request, response);
+//
+//		} catch (TransformerConfigurationException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		} catch (TransformerException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
 		request.getRequestDispatcher("upload-result.jsp").forward(request, response);	}
 
 	/**
