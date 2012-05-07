@@ -75,8 +75,6 @@ System.out.println("uppload-result  icon " + icon);
 <DIV id=u19_rtf><span style=" font-family:'Arial'; color:#FF0000; font-size:13px;">*</span><span style=" font-family:'Arial'; color:#000000; font-size:13px;"> Title</span></DIV></DIV>
 <DIV id=u20 style="position:absolute; left:169px; top:190px; width:311px; height:22px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <DIV id=u20_rtf><span style=" color:#000099; font-size:19px;"><b>Resource Successfully Uploaded</b></span></DIV></DIV>
-
-<!--  mike start -->
 <INPUT  id=u21   type=text value="<%=subject %>" readonly="readonly" style="position:absolute; left:342px; top:310px; width:180px; height:22px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
 
 <DIV id=u22 style="position:absolute; left:201px; top:313px; width:130px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
@@ -85,7 +83,7 @@ System.out.println("uppload-result  icon " + icon);
 <DIV id=u23_rtf><span style=" font-family:'Arial'; color:#FF0000; font-size:13px;">*</span><span style=" font-family:'Arial'; color:#000000; font-size:13px;"> Grade Level</span></DIV></DIV>
 <DIV id=u24 style="position:absolute; left:200px; top:420px; width:130px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <DIV id=u24_rtf><span style=" font-family:'Arial'; color:#FF0000; font-size:13px;">*</span><span style=" font-family:'Arial'; color:#000000; font-size:13px;"> Description</span></DIV></DIV>
-<TEXTAREA id=u25 value="<%=description %>" readonly="readonly" style="position:absolute; left:345px; top:430px; width:314px; height:92px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none"  ></TEXTAREA>
+<TEXTAREA id=u25 readonly="readonly" style="position:absolute; left:345px; top:430px; width:314px; height:92px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none"  ><%=description %> </TEXTAREA>
 
 <INPUT id=u26  type=text value="<%=grade %>" readonly="readonly" style="position:absolute; left:345px; top:366px; width:180px; height:22px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
 
@@ -96,12 +94,6 @@ System.out.println("uppload-result  icon " + icon);
 <DIV id=u37 style="position:absolute; left:200px; top:590px; width:130px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <DIV id=u37_rtf><span style=" font-family:'Arial'; color:#FF0000; font-size:13px;">*</span><span style=" font-family:'Arial'; color:#000000; font-size:13px;"> File</span></DIV></DIV>
 
-<!-- 
-<INPUT id=u28  type=text value="" style="position:absolute; left:342px; top:548px; width:428px; height:25px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none"   >
-
-
-<INPUT id=u29  type=file value="Browse" size=60 style="position:absolute; left:342px; top:547px; width:500px; height:25px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
- -->
 <iframe id="uploadFrameID" name="uploadFrame" height="0" width="0" frameborder="0" scrolling="yes"></iframe>              
 <form id="uploadFileForm" enctype="multipart/form-data" method="post" >
 <INPUT id=u29  type=text value="<%=icon %>" readonly="readonly" style="position:absolute; left:342px; top:547px; width:500px; height:25px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
@@ -150,8 +142,6 @@ src="Upload_files/u31.png" border="0" alt=""></span>
 	<div style="width:100%;overflow:hidden;padding-top:600px;text-align:center">
 	 	&copy;&nbsp;2012&nbsp;&#45;&nbsp;University&nbsp;of&nbsp;St.&nbsp;Thomas&nbsp;-&nbsp;SEIS&nbsp;752&nbsp;Team&nbsp;I
 	</div>	
-<!--  mike end -->
-
 		
 <SCRIPT src="Upload_files/axurerp_pagespecificscript.js"></SCRIPT>	
 </body>
