@@ -40,30 +40,7 @@
     return xmlHttpReq;  
   }  
  
-  function performAjaxFileUpload() {
-		alert("Upload.jsp:performAjaxFileUpload");
-  //   var sampleText = document.getElementById("sampleText").value;
-		var iconFile = document.getElementById("u29").files[0];
-		alert("file " + iconFile.value);
-		var formdata = new FormData();
-		formdata.append("iconFile", iconFile);
-		var contentFile = document.getElementById("u39").files[0];
-		alert("file " + contentFile.value);
-		formdata.append("contentFile", contentFile);
-		
-		var xmlHttpRequest = getXMLHttpRequest(); 
-		xmlHttpRequest.onreadystatechange = getReadyStateHandler(xmlHttpRequest);  
-	
-		xmlHttpRequest.open("POST","servlet/FileUploadServlet", true);
-		xmlHttpRequest.send(formdata);
-		
-		xmlHttpRequest.onload = function(e) {
-			if (this.status == 200) {
-			   alert(this.responseText);
 
-			}
-		};	        		
-}
   
  function performAjaxSubmit() {
  		alert("Upload.jsp:performAjaxSubmit");
@@ -83,20 +60,20 @@
  		
  		xmlHttpRequest.onload = function(e) {
  			if (this.status == 200) {
- 			   alert(this.responseText);
+ 			   alert("mike 200 " + this.responseText);
 			   var u18 = document.getElementById('u18');
 			   var u21 = document.getElementById("u21");
 			   var u26 = document.getElementById("u26");
 			   var u25 = document.getElementById("u25");
 			   var u29 = document.getElementById("u29");
 			   var u39 = document.getElementById("u39");
-//			   alert("file u29 " + u29.value + "file u39 " + u39.value);
+			   alert("icon " + u29.value);
+			   alert("file " + u39.value);
 //			   var mike = PopulateVariables(u29.value);
 //			   alert("call mike1 " + mike);
 //			   mike = PopulateVariables(u39.value);
 //			   alert("call mike2 " + mike);
-
-			   	self.location.href="Upload" +"?title=" + u18.value + "&subject=" + u21.value + "&grade=" + u26.value + "&description=" + u25.value  + "&file=" + u29.value  + "&icon=" + u39.value;
+			   	self.location.href="Upload" +"?title=" + u18.value + "&subject=" + u21.value + "&grade=" + u26.value + "&description=" + u25.value  + "&file=" + PopulateVariables(u39.value)  + "&icon=" + PopulateVariables(u29.value);
 
  			}
   		};	        		
@@ -115,7 +92,7 @@
        if (xmlHttpRequest.status == 200) {  
     	   alert("200");
 //    	   document.getElementById("u29").value="";
-         document.getElementById("result").innerHTML = xmlHttpRequest.responseText;  
+//         document.getElementById("result").innerHTML = xmlHttpRequest.responseText;  
       } else {  
          alert("HTTP error " + xmlHttpRequest.status + ": " + xmlHttpRequest.statusText);  
       }  
@@ -216,8 +193,12 @@
 <OPTION  value="14">12</OPTION>
 </SELECT>
 
-<DIV id=u27 style="position:absolute; left:200px; top:554px; width:130px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
+<DIV id=u27 style="position:absolute; left:200px; top:550px; width:130px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <DIV id=u27_rtf><span style=" font-family:'Arial'; color:#FF0000; font-size:13px;">*</span><span style=" font-family:'Arial'; color:#000000; font-size:13px;"> Picture/Thumbnail</span></DIV></DIV>
+
+<DIV id=u37 style="position:absolute; left:200px; top:590px; width:130px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
+<DIV id=u37_rtf><span style=" font-family:'Arial'; color:#FF0000; font-size:13px;">*</span><span style=" font-family:'Arial'; color:#000000; font-size:13px;"> File</span></DIV></DIV>
+
 <!-- 
 <INPUT id=u28  type=text value="" style="position:absolute; left:342px; top:548px; width:428px; height:25px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none"   >
 
@@ -228,11 +209,7 @@
 <form id="uploadFileForm" enctype="multipart/form-data" method="post" >
 <INPUT id=u29  type=file value="Browse" size=60 style="position:absolute; left:342px; top:547px; width:500px; height:25px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
 
-<INPUT id=u30  type="button" value="Add Content" onClick="performAjaxFileUpload();" style="position:absolute; left:842px; top:547px; width:80px; height:25px; ; ; text-align: center ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
-
 <INPUT id=u39  type=file value="Browse" size=60 style="position:absolute; left:342px; top:587px; width:500px; height:25px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
-
-<INPUT id=u40  type="button" value="Add Content" onClick="performAjaxFileUpload();" style="position:absolute; left:842px; top:587px; width:80px; height:25px; ; ; text-align: center ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none" >
 
 </form> 
 
