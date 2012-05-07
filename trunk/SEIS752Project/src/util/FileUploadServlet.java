@@ -39,9 +39,7 @@ public class FileUploadServlet
 	
     protected void doGet(HttpServletRequest aRequest, HttpServletResponse response) 
     	throws ServletException, IOException 
-    {
-    	System.out.println("doGet mike called");
-    }
+    {}
  
  
     
@@ -49,8 +47,6 @@ public class FileUploadServlet
     	throws ServletException, IOException 
     {
     	doGet(request,response);
-    	System.out.println("FileUploadServlet called");
-		// create file upload factory and upload servlet
 		FileItemFactory factory = new DiskFileItemFactory();
 		ServletFileUpload upload = new ServletFileUpload(factory);
 		List uploadedItems = null;
@@ -60,16 +56,15 @@ public class FileUploadServlet
 		{
 			// iterate over all uploaded files
 			uploadedItems = upload.parseRequest(request);
-			System.out.println("doPost processing " + uploadedItems.size() + " files");			
 			Iterator i = uploadedItems.iterator();
 			while (i.hasNext()) 
 			{
 				fileItem = (FileItem) i.next();
 				request.getSession().setAttribute (fileItem.getFieldName(), fileItem.getName());
-				System.out.println("Field Name = "+fileItem.getFieldName()+
-						", File Name = "+fileItem.getName()+
-						", Content type = "+fileItem.getContentType()+
-						", File Size = "+fileItem.getSize());
+//				System.out.println("Field Name = "+fileItem.getFieldName()+
+//						", File Name = "+fileItem.getName()+
+//						", Content type = "+fileItem.getContentType()+
+//						", File Size = "+fileItem.getSize());
 				if (fileItem.isFormField() == false) 
 				{
 					if (fileItem.getSize() > 0) 
