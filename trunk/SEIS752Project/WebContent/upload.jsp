@@ -17,7 +17,7 @@
    */ 
 
   function getXMLHttpRequest() {  
-	   alert("getXMLHttpRequest called");
+//	   alert("getXMLHttpRequest called");
     var xmlHttpReq = false;  
     // to create XMLHttpRequest object in non-Microsoft browsers  
     if (window.XMLHttpRequest) {        	  
@@ -43,7 +43,7 @@
 
   
  function performAjaxSubmit() {
- 		alert("Upload.jsp:performAjaxSubmit");
+// 		alert("Upload.jsp:performAjaxSubmit");
     //   var sampleText = document.getElementById("sampleText").value;
 
 		var iconFile = document.getElementById("u29").files[0];
@@ -60,19 +60,16 @@
  		
  		xmlHttpRequest.onload = function(e) {
  			if (this.status == 200) {
- 			   alert("mike 200 " + this.responseText);
+ //			   alert("mike 200 " + this.responseText);
 			   var u18 = document.getElementById('u18');
 			   var u21 = document.getElementById("u21");
 			   var u26 = document.getElementById("u26");
 			   var u25 = document.getElementById("u25");
 			   var u29 = document.getElementById("u29");
 			   var u39 = document.getElementById("u39");
-			   alert("icon " + u29.value);
-			   alert("file " + u39.value);
-//			   var mike = PopulateVariables(u29.value);
-//			   alert("call mike1 " + mike);
-//			   mike = PopulateVariables(u39.value);
-//			   alert("call mike2 " + mike);
+//			   alert("icon " + u29.value);
+//			   alert("file " + u39.value);
+
 			   	self.location.href="Upload" +"?title=" + u18.value + "&subject=" + u21.value + "&grade=" + u26.value + "&description=" + u25.value  + "&file=" + PopulateVariables(u39.value)  + "&icon=" + PopulateVariables(u29.value);
 
  			}
@@ -90,9 +87,7 @@
    return function() {  
      if (xmlHttpRequest.readyState == 4) {  
        if (xmlHttpRequest.status == 200) {  
-    	   alert("200");
-//    	   document.getElementById("u29").value="";
-//         document.getElementById("result").innerHTML = xmlHttpRequest.responseText;  
+//    	   alert("200");
       } else {  
          alert("HTTP error " + xmlHttpRequest.status + ": " + xmlHttpRequest.statusText);  
       }  
@@ -139,7 +134,7 @@
 			</c:if>							
 		</div>
 		
-<INPUT id=u18  type=text value="mmkhtitle" style="position:absolute; left:342px; top:265px; width:308px; height:25px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none"   >
+<INPUT id=u18  type=text value="" style="position:absolute; left:342px; top:265px; width:308px; height:25px; ; ; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none"   >
 
 <DIV id=u19 style="position:absolute; left:202px; top:272px; width:130px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <DIV id=u19_rtf><span style=" font-family:'Arial'; color:#FF0000; font-size:13px;">*</span><span style=" font-family:'Arial'; color:#000000; font-size:13px;"> Title</span></DIV></DIV>
