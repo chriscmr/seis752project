@@ -108,16 +108,6 @@ public class Upload extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("upload get");
-//		self.location.href="Upload" +"?title=" + u18.value + "&subject=" + u21.value + "&grade=" + u26.value + "&description=" + u25.value;
-
-//		title=mmkhtitle
-//		subject=behavioral%20Studies
-//		grade=Pre-K
-//		description=sfadfa
-//		file=Presentation%20v8%20-%20Munger,Ahmed,Geethanjali%20comp,Mikhail,%20Bee.pptx
-//		icon=Final%20Exam%20Study%20Guide_SEIS%20707_Spring%202012-orig.doc
-//
 		Resource resource = new Resource();
 		resource.setTitle(request.getParameter("title"));
 		resource.setSubject(request.getParameter("subject"));
@@ -127,13 +117,13 @@ public class Upload extends HttpServlet {
 		resource.setLocation(new File(request.getParameter("file")).getName());
 		resource.setIcon(new File(request.getParameter("icon")).getName());
 		resource.setDate_created();
-		System.out.println("doGet BasicSearch called ");
-		System.out.println("title " + resource.getTitle());
-		System.out.println("subject " + resource.getSubject() + ":" + subjectMap.get(resource.getSubject()));
-		System.out.println("grade " + resource.getGrade() + ":" + gradeMap.get(resource.getGrade()));
-		System.out.println("description " + resource.getDescription());
-		System.out.println("location " + resource.getLocation());
-		System.out.println("icon " + resource.getIcon());
+//		System.out.println("doGet BasicSearch called ");
+//		System.out.println("title " + resource.getTitle());
+//		System.out.println("subject " + resource.getSubject() + ":" + subjectMap.get(resource.getSubject()));
+//		System.out.println("grade " + resource.getGrade() + ":" + gradeMap.get(resource.getGrade()));
+//		System.out.println("description " + resource.getDescription());
+//		System.out.println("location " + resource.getLocation());
+//		System.out.println("icon " + resource.getIcon());
 		request.getSession().setAttribute ("title",resource.getTitle());
 		request.getSession().setAttribute ("subject",subjectMap.get(resource.getSubject()));
 		request.getSession().setAttribute ("grade",gradeMap.get(resource.getGrade()));
@@ -142,28 +132,11 @@ public class Upload extends HttpServlet {
 		request.getSession().setAttribute ("icon",resource.getIcon());
 		Set id = new HashSet();
 		try {
-//			int i = resource.save(conn);
-//			System.out.println(" Sa" + i);
+
 			id.add(new Integer( resource.save(conn)));
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		String xml = DBtoXML.dbSelectToXML(conn, "Ressource", id);
-//		System.out.println(xml);
-//		try {
-//			String html = StringToHTML.strToHtml(xml);
-//			System.out.println(html);
-//			request.getSession().setAttribute ("tbtable",html);
-////			request.getRequestDispatcher("index.jsp").forward(request, response);
-//
-//		} catch (TransformerConfigurationException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		} catch (TransformerException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
 		request.getRequestDispatcher("upload-result.jsp").forward(request, response);	}
 
 	/**
