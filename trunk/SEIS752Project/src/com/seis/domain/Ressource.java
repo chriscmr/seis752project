@@ -15,7 +15,7 @@ public class Ressource implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="RESSOURCE_ID_GENERATOR", sequenceName="S_RESSOURCE")
+	@SequenceGenerator(name="RESSOURCE_ID_GENERATOR", sequenceName="S_RESSOURCE", allocationSize = 1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="RESSOURCE_ID_GENERATOR")
 	private long id;
 
