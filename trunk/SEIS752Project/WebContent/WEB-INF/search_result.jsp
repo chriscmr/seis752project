@@ -137,7 +137,9 @@
 							</td>
 							
 							<td style="vertical-align:middle">
-								<c:out value="${myResource.location}"/>	
+								<c:if test="${myResource.location != null}">
+									<a href="images/<c:out value="${myResource.location}"/>"><c:out value="${myResource.location}"/></a>
+								</c:if>	
 							</td>
 							
 						</tr>
