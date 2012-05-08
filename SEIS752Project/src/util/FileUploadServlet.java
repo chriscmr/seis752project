@@ -51,7 +51,7 @@ public class FileUploadServlet
 		ServletFileUpload upload = new ServletFileUpload(factory);
 		List uploadedItems = null;
 		FileItem fileItem = null;
-		String filePath = "c:\\apps\\seis752\\vault\\folder1";	// Path to store file on local system
+		String filePath = "c:\\Users\\Chris\\workspaceGlassFish\\SEIS752Project\\WebContent\\images";	// Path to store file on local system
  		try 
 		{
 			// iterate over all uploaded files
